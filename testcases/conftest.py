@@ -6,7 +6,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 
 @pytest.fixture(scope="class")
 def setup(request):
-    # Set up the driver
+    # Set up the MAIN driver
     driver = webdriver.Firefox(service=Service(GeckoDriverManager().install()))
     wait = WebDriverWait(driver, 15)
     driver.implicitly_wait(3)
@@ -15,6 +15,6 @@ def setup(request):
 
     request.cls.driver = driver
     request.cls.wait = wait
-    
+
     yield
     driver.quit()
