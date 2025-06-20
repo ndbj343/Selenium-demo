@@ -18,12 +18,12 @@ class TestLogin:
         """Page 2 — Inventory Page"""
         # Validate we're on the Products page
         inventory.validate_on_inventory_page()
-        assert inventory.add_to_cart("Sauce Labs Backpack"), "Product not found."
+        assert inventory.add_to_cart("Sauce Labs Fleece Jacket"), "Product not found."
         inventory.go_to_cart()
 
         """Page 3 — Cart Page"""
         cart.verify_cart_count("1")
-        cart.verify_item_in_cart("Sauce Labs Backpack")
+        cart.verify_item_in_cart("Sauce Labs Fleece Jacket")
 
 
 
