@@ -22,7 +22,6 @@ class InventoryPage():
             if name == product_name:
                 product.find_element(By.TAG_NAME, "button").click()
                 return True
-
         return False
 
     def go_to_cart(self):
